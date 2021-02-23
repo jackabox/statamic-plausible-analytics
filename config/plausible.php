@@ -4,15 +4,14 @@ return [
     /**
      * API Key from Plausible
      */
-//    'key' => env('PLAUSIBLE_KEY', null),
+    'key' => env('PLAUSIBLE_KEY', null),
 
     /**
      * Site name as shown in the Plausible dashboard
      * e.g. jackwhiting.co.uk
      */
-//    'site' => env('PLAUSIBLE_SITE', null),
-'site' => null,
-    'key' => null,
+    'site' => env('PLAUSIBLE_SITE', null),
+
     /**
      * Do you want to use the cache?
      * True of False.

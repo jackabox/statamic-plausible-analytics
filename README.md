@@ -6,8 +6,14 @@ A wrapper around the Plausible API that fetches the analytics into your dashboar
 
 Install the addon.
 
-```
+```bash
 composer require jackabox/statamic-plausible-analytics
+```
+
+Publish the assets
+
+```bash
+php artisan vendor:publish --provider="Jackabox\Plausible\PlausibleServiceProvider"
 ```
 
 Then follow the steps in the config step bellow.
