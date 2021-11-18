@@ -60,7 +60,7 @@ export default {
 
     methods: {
         async fetch() {
-            await fetch(`/cp/plausible/api/timeseries?period=${this.period}`)
+            await fetch(cp_url(`plausible/api/timeseries?period=${this.period}`))
                 .then(res => res.json())
                 .then(({ labels, series }) => {
                     this.labels = labels
