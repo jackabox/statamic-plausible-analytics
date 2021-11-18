@@ -32,7 +32,7 @@ class TopReferrersController extends CpController
     {
         $url = sprintf(
             "$s/api/v1/stats/breakdown?period=%s&limit=%d&property=visit:source&metrics=visitors",
-            config('plausible.domain'),
+            config('plausible.domain', 'https://plausible.io'),
             $this->period,
             config('plausible.results_limit', 5)
         );
