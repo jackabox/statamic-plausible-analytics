@@ -2,6 +2,11 @@
 
 return [
     /**
+     * Host from Plausible
+     */
+    'host' => env('PLAUSIBLE_HOST', 'https://plausible.io'),
+
+    /**
      * API Key from Plausible
      */
     'key' => env('PLAUSIBLE_KEY', null),

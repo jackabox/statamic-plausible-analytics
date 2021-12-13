@@ -36,7 +36,7 @@ class TimeseriesController extends CpController
     public function handleResults(): array
     {
         $url = sprintf(
-            "https://plausible.io/api/v1/stats/timeseries?period=%s",
+            config('plausible.host', 'https://plausible.io') . "/api/v1/stats/timeseries?period=%s",
             $this->period
         );
 
