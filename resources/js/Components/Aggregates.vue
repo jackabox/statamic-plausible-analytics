@@ -67,7 +67,7 @@ export default {
         },
 
         async fetch() {
-            await fetch(`/cp/plausible/api/aggregates?period=${this.period}`)
+            await fetch(cp_url(`plausible/api/aggregates?period=${this.period}`))
                 .then(res => res.json())
                 .then(res => this.data = res)
                 .catch(err => console.log(err))

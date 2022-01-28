@@ -52,7 +52,7 @@ export default {
 
     methods: {
         async fetch() {
-            await fetch(`/cp/plausible/api/top-referrers?period=${this.period}`)
+            await fetch(cp_url(`plausible/api/top-referrers?period=${this.period}`))
                 .then(res => res.json())
                 .then(res => this.referrers = res)
                 .catch(err => console.log(err))

@@ -12,6 +12,13 @@ return [
      */
     'site' => env('PLAUSIBLE_SITE', null),
 
+
+    /**
+     * Domain where your plausible instance is hosted
+     * e.g. jackwhiting.co.uk
+     */
+    'domain' => env('PLAUSIBLE_DOMAIN', 'https://plausible.io'),
+
     /**
      * Do you want to use the cache?
      * True of False.
