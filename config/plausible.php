@@ -12,7 +12,6 @@ return [
      */
     'site' => env('PLAUSIBLE_SITE', null),
 
-
     /**
      * Domain where your plausible instance is hosted
      * e.g. jackwhiting.co.uk
