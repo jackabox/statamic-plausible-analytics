@@ -23,8 +23,9 @@ Then follow the steps in the config step bellow.
 1. Head to your [Plausible Settings](https://plausible.io/settings).
 2. Scroll down to API key and generate a new one. Name it whatever you like.
 3. Copy that value into your `.env` as `PLAUSIBLE_KEY`.
-4. Get your site as displayed in your Plausible Dashboard (e.g. jackwhiting.co.uk). Add that value to your `.env` as `PLAUSIBLE_SITE`.
-5. Data should load.
+4. If you're self hosting Plausible, add the config option for `PLAUSIBLE_DOMAIN` in your `.env`
+5. Get your site as displayed in your Plausible Dashboard (e.g. jackwhiting.co.uk). Add that value to your `.env` as `PLAUSIBLE_SITE`.
+6. Data should load.
 
 For more customisation you can publish the config and adjust the values as you wish.
 
