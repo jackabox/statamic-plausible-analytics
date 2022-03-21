@@ -1,12 +1,12 @@
 <template>
-    <div class="flex p-0 border-b justify-between">
+    <div class="flex justify-between p-0 border-b">
         <div
             v-for="(item, key, index) in data"
             :key="key"
             :class="{ 'border-r': index != getArrayLength }"
-            class="p-2 -r w-1/4 last:border-0"
+            class="w-1/4 p-2 -r last:border-0"
         >
-            <h5 class="mb-1 text-xs font-medium text-grey-70 uppercase">{{ getKeyTitle(key) }}</h5>
+            <h5 class="mb-1 text-xs font-medium uppercase text-grey-70">{{ getKeyTitle(key) }}</h5>
             <p class="text-2xl">
                 {{ item.value }}{{ getKeyEnding(key) }}
             </p>
@@ -20,7 +20,7 @@ export default {
         period: {
             type: String,
             required: true
-        }
+        },
     },
 
     watch: {
@@ -67,7 +67,7 @@ export default {
         },
 
         async fetch() {
-            await fetch(cp_url(`plausible/api/aggregates?period=${this.period}`))
+            await fetch(`/cp/plausible/api/aggregates?period=${this.period}`)
                 .then(res => res.json())
                 .then(res => this.data = res)
                 .catch(err => console.log(err))

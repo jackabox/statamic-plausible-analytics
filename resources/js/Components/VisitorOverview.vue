@@ -1,7 +1,10 @@
 <template>
-    <div class="card p-0 mb-4">
+    <div class="p-0 mb-4 card">
+        <h3 v-if="widget" class="p-2">Analytics (Last {{ period }})</h3>
+
         <Aggregates :period="period" />
 
+        <div v-if="showGraph">
         <vue-frappe
             id="test"
             :lineOptions="options"
@@ -11,6 +14,7 @@
             :labels="labels"
             :dataSets="series">
         </vue-frappe>
+        </div>
     </div>
 </template>
 
@@ -23,6 +27,16 @@ export default {
         period: {
             type: String,
             required: true
+        },
+        widget: {
+            type: Boolean,
+            required: false,
+            default: false
+        },
+        showGraph: {
+            type: Boolean,
+            required: false,
+            default: true
         }
     },
 
@@ -60,7 +74,7 @@ export default {
 
     methods: {
         async fetch() {
-            await fetch(cp_url(`plausible/api/timeseries?period=${this.period}`))
+            await fetch(`/cp/plausible/api/timeseries?period=${this.period}`)
                 .then(res => res.json())
                 .then(({ labels, series }) => {
                     this.labels = labels

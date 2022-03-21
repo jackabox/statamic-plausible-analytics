@@ -31,8 +31,7 @@ class TopReferrersController extends CpController
     public function handleResults()
     {
         $url = sprintf(
-            "$s/api/v1/stats/breakdown?period=%s&limit=%d&property=visit:source&metrics=visitors",
-            config('plausible.domain', 'https://plausible.io'),
+            "https://plausible.io/api/v1/stats/breakdown?period=%s&limit=%d&property=visit:source&metrics=visitors",
             $this->period,
             config('plausible.results_limit', 5)
         );

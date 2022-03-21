@@ -31,8 +31,7 @@ class TopPagesController extends CpController
     public function handleResults()
     {
         $url = sprintf(
-            "%s/api/v1/stats/breakdown?period=%s&property=event:page&limit=%d",
-            config('plausible.domain', 'https://plausible.io'),
+            "https://plausible.io/api/v1/stats/breakdown?period=%s&property=event:page&limit=%d",
             $this->period,
             config('plausible.results_limit', 5)
         );

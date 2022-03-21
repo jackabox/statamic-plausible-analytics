@@ -8,8 +8,8 @@ class DashboardController extends CpController
 {
     public function index()
     {
-        if (!config('plausible.key') || !config('plausible.site')) {
-            return view('plausible::no-setup', [
+        if (! config('plausible.key') || ! config('plausible.site')) {
+            return view ('plausible::no-setup', [
                 'title' => 'Analytics'
             ]);
         }

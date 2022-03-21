@@ -1,6 +1,6 @@
 <template>
-    <div class="card p-0">
-        <h3 class="p-2">Top Referrers</h3>
+    <div class="p-0 card">
+        <h3 class="p-2">Top Referrers <span v-if="widget">(Last {{ period }})</span></h3>
 
         <table class="data-table">
             <thead>
@@ -26,6 +26,11 @@ export default {
         period: {
             type: String,
             required: true
+        },
+        widget: {
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
 
@@ -52,7 +57,7 @@ export default {
 
     methods: {
         async fetch() {
-            await fetch(cp_url(`plausible/api/top-referrers?period=${this.period}`))
+            await fetch(`/cp/plausible/api/top-referrers?period=${this.period}`)
                 .then(res => res.json())
                 .then(res => this.referrers = res)
                 .catch(err => console.log(err))

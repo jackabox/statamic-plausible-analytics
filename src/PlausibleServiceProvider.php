@@ -19,6 +19,13 @@ class PlausibleServiceProvider extends AddonServiceProvider
         __DIR__ . '/../dist/js/statamic-plausible.js'
     ];
 
+    protected $widgets = [
+        Widgets\PlausibleTopPages::class,
+        Widgets\PlausibleTopBrowsers::class,
+        Widgets\PlausibleTopReferrers::class,
+        Widgets\PlausibleVisitorOverview::class,
+    ];
+
     public function boot()
     {
         parent::boot();
@@ -31,7 +38,7 @@ class PlausibleServiceProvider extends AddonServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/plausible.php' => config_path('plausible.php'),
+                __DIR__ . '/../config/plausible.php' => config_path('plausible.php'),
             ], 'plausible-config');
         }
     }
@@ -40,8 +47,8 @@ class PlausibleServiceProvider extends AddonServiceProvider
     {
         if (
             (! config('plausible.key') || ! config('plausible.site'))
-            && config('app.env') === 'production')
-        {
+            && config('app.env') === 'production'
+        ) {
             return;
         }
 

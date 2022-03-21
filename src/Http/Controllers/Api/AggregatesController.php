@@ -36,8 +36,7 @@ class AggregatesController extends CpController
     public function handleResults()
     {
         $url = sprintf(
-            "%s/api/v1/stats/aggregate?period=%s&metrics=visitors,pageviews,bounce_rate,visit_duration",
-            config('plausible.domain', 'https://plausible.io'),
+            "https://plausible.io/api/v1/stats/aggregate?period=%s&metrics=visitors,pageviews,bounce_rate,visit_duration",
             $this->period
         );
 

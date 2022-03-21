@@ -31,8 +31,7 @@ class TopBrowsersController extends CpController
     public function handleResults()
     {
         $url = sprintf(
-            "%s/api/v1/stats/breakdown?period=%s&limit=%d&property=visit:browser&metrics=visitors",
-            config('plausible.domain', 'https://plausible.io'),
+            "https://plausible.io/api/v1/stats/breakdown?period=%s&limit=%d&property=visit:browser&metrics=visitors",
             $this->period,
             config('plausible.results_limit', 5)
         );
