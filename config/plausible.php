@@ -19,6 +19,13 @@ return [
     'cache_enabled' => env('PLAUSIBLE_CACHE', true),
 
     /**
+     * Domain where your plausible instance is hosted
+     * e.g. jackwhiting.co.uk
+     */
+    'domain' => env('PLAUSIBLE_DOMAIN', 'https://plausible.io'),
+
+
+    /**
      * Cache duration
      */
     'cache_duration' => 20000,
