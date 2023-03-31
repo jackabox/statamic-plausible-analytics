@@ -24,8 +24,9 @@ trait FetchResultsTrait
 
         $params['site_id'] = config('plausible.site');
         $parsed_url['query'] = http_build_query($params);
+        $port = isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '';
 
-        return $parsed_url['scheme'] . '://' . $parsed_url['host'] . $parsed_url['path'] . '?' . $parsed_url['query'];
+        return $parsed_url['scheme'] . '://' . $parsed_url['host'] . $port . $parsed_url['path'] . '?' . $parsed_url['query'];
     }
 
     public function fetchQuery(string $url)
@@ -33,8 +34,8 @@ trait FetchResultsTrait
         $http = Http::withToken(config('plausible.key'))
             ->get($url);
 
-        if (! $http->ok()) {
-            return 'Not working';
+        if (!$http->ok()) {
+            return ['error' => 'Not working'];
         }
 
         $data = $http->json();
@@ -64,7 +65,7 @@ trait FetchResultsTrait
 
     public function getCachedResults()
     {
-        return Cache::get($this->key, function() {
+        return Cache::get($this->key, function () {
             return $this->handleResults();
         });
     }
