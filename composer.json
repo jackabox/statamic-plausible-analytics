@@ -1,40 +1,40 @@
 {
-    "name": "jackabox/statamic-plausible-analytics",
-    "description": "Get your Plausible Analytics data right from your Statamic dashboard.",
-    "version": "1.2.1",
-    "autoload": {
-        "psr-4": {
-            "Jackabox\\Plausible\\": "src"
-        }
-    },
-    "authors": [
-        {
-            "name": "Jack Whiting",
-            "email": "hi@jackwhiting.co.uk",
-            "homepage": "https://jackwhiting.co.uk",
-            "role": "Developer"
-        }
-    ],
-    "support": {
-        "email": "hi@jackwhiting.co.uk"
-    },
-    "extra": {
-        "statamic": {
-            "name": "Plausible Analytics",
-            "description": "Get your Plausible Analytics data right from your Statamic dashboard"
-        },
-        "laravel": {
-            "providers": [
-                "Jackabox\\Plausible\\PlausibleServiceProvider"
-            ]
-        }
-    },
-    "require": {
-        "guzzlehttp/guzzle": "^7.2"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+  "name": "jackabox/statamic-plausible-analytics",
+  "description": "Get your Plausible Analytics data right from your Statamic dashboard.",
+  "version": "1.2.2",
+  "autoload": {
+    "psr-4": {
+      "Jackabox\\Plausible\\": "src"
     }
+  },
+  "authors": [
+    {
+      "name": "Jack Whiting",
+      "email": "hi@jackwhiting.co.uk",
+      "homepage": "https://jackwhiting.co.uk",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "hi@jackwhiting.co.uk"
+  },
+  "extra": {
+    "statamic": {
+      "name": "Plausible Analytics",
+      "description": "Get your Plausible Analytics data right from your Statamic dashboard"
+    },
+    "laravel": {
+      "providers": [
+        "Jackabox\\Plausible\\PlausibleServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^7.2"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  }
 }
